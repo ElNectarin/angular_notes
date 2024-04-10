@@ -1,0 +1,26 @@
+<form
+  (ngSubmit)="onSubmit()"
+  class="size-48 bg-gray-50 w-96 flex flex-col absolute justify-between"
+>
+  <div>
+    <label for="noteTitle" class="text-4xl">Title:</label>
+    <input
+      type="text"
+      id="noteTitle"
+      [(ngModel)]="noteTitle"
+      name="noteTitle"
+      required
+      class="w-1/2 border"
+    />
+  </div>
+  <div class="w-full">
+    <label for="noteText" class="text-4xl w-full">Text:</label>
+    <textarea
+      id="noteText"
+      [(ngModel)]="noteText"
+      name="noteText"
+      required
+    ></textarea>
+  </div>
+  <button type="submit">Add Note</button>
+</form>

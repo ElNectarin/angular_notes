@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center">
+  <!-- Кнопка "Add", при нажатии на которую будет отображаться форма -->
+  <button
+    (click)="toggleNoteForm()"
+    class="size-16 bg-black text-white w-1/2 rounded"
+  >
+    Add
+  </button>
+
+  <!-- Компонента note-form, скрытая по умолчанию, но отображаемая при нажатии на кнопку "Add" -->
+  <app-note-form
+    *ngIf="showNoteForm"
+    (addNote)="onAddNote($event)"
+  ></app-note-form>
+
+  <!-- Список заметок -->
+  <div
+    *ngFor="let note of notes"
+    class="border border-gray-400 mb-4 rounded-lg w-1/2 h-40 bg-white"
+  >
+    <p class="text-3xl m-1">{{ note.noteTitle }}</p>
+    <textarea class="w-full">{{ note.noteText }}</textarea>
+  </div>
+</div>
